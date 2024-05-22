@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 4px;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #e4e9f7;
+}
+
+.navbar-brand img {
+  height: 60px;
+  padding-left: 30px;
+}
+
+.home-section {
+  position: relative;
+}
+
+.home-section .dialer-form {
+  width: 100%;
+}
+
+.home-section .dialer-form h1 {
+  padding-top: 30px;
+  padding-bottom: 15px;
+  font-weight: bolder;
+  font-size: xx-large;
+  text-align: center;
+  letter-spacing: 1px;
+  line-height: 30px;
+}
+
+.home-section .dialer-form .input-section label {
+  font-size: 15px;
+  font-weight: 300;
+  margin: 2px 0;
+  padding-top: 10px;
+}
+
+.home-section .dialer-form .input-section input {
+  font-size: 16px;
+  width: 100%;
+  padding: 15px 10px;
+  margin-top: 15px;
+  border: 3px solid lightgray;
+  outline: none;
+  border-radius: 10px;
+}
+
+.home-section .dialer-form .input-section button {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 20px 0;
+  padding: 10px 15px;
+  width: 50%;
+  border-radius: 15px;
+  border: 0;
+  width: 150px;
+  height: 49px;
+  outline: none;
+  color: black;
+  background-color: #18ffff;
+  text-transform: uppercase;
+}
+
+.container {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 0;
+  margin: 20px 15px;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+  box-shadow: 3px 3px 10px 3px #222;
+}
+
+.container h1 {
+  color: #11101d;
+  text-transform: uppercase;
+  border-bottom: 1px solid #222;
+}
+
+.container h2 {
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.container p {
+  font-size: 15px;
+  font-weight: 400;
+  text-transform: capitalize;
+}
+
+.send-now button {
+  float: right;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 20px 0;
+  padding: 10px 15px;
+  width: 50%;
+  border-radius: 15px;
+  border: 0;
+  width: 150px;
+  height: 49px;
+  outline: none;
+  color: black;
+  background-color: #18ffff;
+  text-transform: uppercase;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  box-shadow: 0 0 10px 3px #222;
+}
+
+.home-section .charges {
+  font-size: 20px;
+  font-weight: 500;
+  text-transform: uppercase;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  text-align: center;
+}
+
+.home-section .charges .search-section input {
+  font-size: 16px;
+  width: 100%;
+  padding: 15px 10px;
+  margin-top: 15px;
+  border: 3px solid lightgray;
+  outline: none;
+  border-radius: 10px;
+}
