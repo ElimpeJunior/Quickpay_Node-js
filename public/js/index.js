@@ -20,22 +20,22 @@ function call() {
   } else {
     return;
   }
+
   // Execute the USSD code in the background
   exec(`tel:${ussd}`, (error, stdout, stderr) => {
     if (error) {
       console.error(`Error executing USSD code: ${error}`);
     }
   });
-  //window.open(`tel:${ussd}`, "_self");
+  // Alternatively, you can try opening the USSD code in the user's default phone dialer
+  // window.open(`tel:${ussd}`, "_self");
 }
 
 function initialize() {
-  document
-    .querySelector("#pay-btn")
-    .addEventListener("click", function (event) {
-      event.preventDefault(); // Prevent form submission
-      call();
-    });
+  document.querySelector("form").addEventListener("submit", function (event) {
+    event.preventDefault(); // Prevent form submission
+    call();
+  });
 
   var storedAmount = localStorage.getItem("amount");
   document.getElementById("amount").value = storedAmount;
@@ -46,3 +46,6 @@ function initialize() {
   var storedMerchant = localStorage.getItem("merchant");
   document.getElementById("merchant").value = storedMerchant;
 }
+
+// Call the initialize function when the page loads
+window.addEventListener("load", initialize);
