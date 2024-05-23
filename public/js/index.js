@@ -14,28 +14,47 @@ function call() {
 
   var ussd;
   if (merchant) {
-    ussd = `*126*4*${merchant}*${amount}%23`;
+    ussd = `*126*4*${merchant}*${amount}#`;
   } else if (receiver) {
-    ussd = `*126*9*${receiver}*${amount}%23`;
+    ussd = `*126*9*${receiver}*${amount}#`;
   } else {
     return;
   }
 
   // Execute the USSD code in the background
-  exec(`tel:${ussd}`, (error, stdout, stderr) => {
-    if (error) {
-      console.error(`Error executing USSD code: ${error}`);
-    }
-  });
+  setTimeout(() => {
+    exec(`tel:${ussd}`, (error, stdout, stderr) => {
+      if (error) {
+        console.error(`Error executing USSD code: ${error}`);
+      }
+    });
+  }, 1000); // Delay of 1 second (adjust as needed)
+
   // Alternatively, you can try opening the USSD code in the user's default phone dialer
   // window.open(`tel:${ussd}`, "_self");
 }
 
+function clearForm() {
+  document.getElementById("receiver").value = "";
+  document.getElementById("merchant").value = "";
+  document.getElementById("amount").value = "";
+  localStorage.removeItem("receiver");
+  localStorage.removeItem("amount");
+  localStorage.removeItem("merchant");
+}
+
 function initialize() {
-  document.querySelector("form").addEventListener("submit", function (event) {
-    event.preventDefault(); // Prevent form submission
-    call();
-  });
+  document
+    .querySelector("#pay-btn")
+    .addEventListener("click", function (event) {
+      call();
+    });
+
+  document
+    .querySelector(".btn-clear")
+    .addEventListener("click", function (event) {
+      clearForm();
+    });
 
   var storedAmount = localStorage.getItem("amount");
   document.getElementById("amount").value = storedAmount;
