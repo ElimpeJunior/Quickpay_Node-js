@@ -14,9 +14,9 @@ function call() {
 
   var ussd;
   if (merchant) {
-    ussd = `*126*4*${merchant}*${amount}#`;
+    ussd = `*126*4*${merchant}*${amount}%23`;
   } else if (receiver) {
-    ussd = `*126*9*${receiver}*${amount}#`;
+    ussd = `*126*9*${receiver}*${amount}%23`;
   } else {
     return;
   }
