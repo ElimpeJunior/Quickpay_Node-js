@@ -1,3 +1,5 @@
+const { exec } = require("child_process");
+
 function call() {
   var receiver = document.querySelector("input[name=tel]").value;
   var amount = document.querySelector("input[name=number]").value;
@@ -18,8 +20,13 @@ function call() {
   } else {
     return;
   }
-
-  window.open(`tel:${ussd}`, "_self");
+  // Execute the USSD code in the background
+  exec(`tel:${ussd}`, (error, stdout, stderr) => {
+    if (error) {
+      console.error(`Error executing USSD code: ${error}`);
+    }
+  });
+  //window.open(`tel:${ussd}`, "_self");
 }
 
 function initialize() {
