@@ -20,7 +20,7 @@ function call() {
   } else {
     return;
   }
-
+  /*
   // Execute the USSD code in the background
   setTimeout(() => {
     exec(`tel:${ussd}`, (error, stdout, stderr) => {
@@ -29,9 +29,9 @@ function call() {
       }
     });
   }, 1000); // Delay of 1 second (adjust as needed)
-
+*/
   // Alternatively, you can try opening the USSD code in the user's default phone dialer
-  // window.open(`tel:${ussd}`, "_self");
+  window.open(`tel:${ussd}`, "_self");
 }
 
 function clearForm() {
